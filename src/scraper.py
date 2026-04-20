@@ -59,30 +59,71 @@ class DistrictIPLScraper:
             return []
     
     def _parse_match_card(self, card) -> Optional[Dict]:
-        """Parse individual match card"""
-        try:
-            teams_text = card.get_text()
-            
-            team_patterns = [
-                'Chennai Super Kings', 'CSK',
-                'Mumbai Indians', 'MI',
-                'Royal Challengers Bangalore', 'RCB',
-                'Kolkata Knight Riders', 'KKR',
-                'Delhi Capitals', 'DC',
-                'Rajasthan Royals', 'RR',
-                'Punjab Kings', 'PBKS',
-                'Sunrisers Hyderabad', 'SRH',
-                'Gujarat Titans', 'GT',
-                'Lucknow Super Giants', 'LSG'
-            ]
-            
-            found_teams = []
-            for pattern in team_patterns:
-                if pattern in teams_text:
-                    found_teams.append(pattern)
-            
-            if len(found_teams) < 2:
-                return None
+    """Parse individual match card - FIXED VERSION"""
+    try:
+        card_text = card.get_text(separator=' ', strip=True)
+        
+        # Team detection
+        team_patterns = [
+            'Chennai Super Kings', 'CSK',
+            'Mumbai Indians', 'MI',
+            'Royal Challengers Bangalore', 'RCB',
+            'Kolkata Knight Riders', 'KKR',
+            'Delhi Capitals', 'DC',
+            'Rajasthan Royals', 'RR',
+            'Punjab Kings', 'PBKS',
+            'Sunrisers Hyderabad', 'SRH',
+            'Gujarat Titans', 'GT',
+            'Lucknow Super Giants', 'LSG'
+        ]
+        
+        found_teams = []
+        for pattern in team_patterns:
+            if pattern in card_text and pattern not in found_teams:
+                found_teams.append(pattern)
+                if len(found_teams) == 2:
+                    break
+        
+        if len(found_teams) < 2:
+            return None
+        
+        teams = ' vs '.join(found_teams[:2])
+        
+        # Extract clean date/time
+        import re
+        date_match = re.search(r'(Mon|Tue|Wed|Thu|Fri|Sat|Sun)\s+(\d{1,2})\s+(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)', card_text)
+        date = f"{date_match.group(1)} {date_match.group(2)} {date_match.group(3)}" if date_match else "Date TBD"
+        
+        time_match = re.search(r'(\d{1,2}):(\d{2})\s*(AM|PM)', card_text)
+        match_time = f"{time_match.group(0)}" if time_match else "Time TBD"
+        
+        # Stadium
+        stadium_match = re.search(r'([\w\s]+Stadium)', card_text)
+        stadium = stadium_match.group(1).strip() if stadium_match else "Stadium TBD"
+        
+        # Status
+        status = self._detect_status(card)
+        
+        # Booking link
+        book_link = None
+        book_btn = card.find('a', href=True)
+        if book_btn:
+            book_link = book_btn['href']
+            if not book_link.startswith('http'):
+                book_link = f"https://www.district.in{book_link}"
+        
+        return {
+            'teams': teams,
+            'date': date,
+            'stadium': stadium,
+            'time': match_time,
+            'status': status,
+            'booking_link': book_link,
+            'timestamp': datetime.now().isoformat(),
+            'source': 'district.in'
+        }
+    except:
+        return None
             
             teams = ' vs '.join(found_teams[:2])
             
