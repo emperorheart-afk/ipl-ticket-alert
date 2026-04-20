@@ -1,177 +1,159 @@
 """
-Main IPL Ticket Monitor
+District.in IPL Ticket Scraper
 """
 
-import os
+import requests
+from bs4 import BeautifulSoup
 import json
 from datetime import datetime
-from typing import Dict, List
+import time
+import re
+from typing import List, Dict, Optional
 import logging
-import pytz
-from notifier import TelegramNotifier
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 
-class IPLTicketMonitor:
+class DistrictIPLScraper:
     def __init__(self):
-        self.bot_token = os.getenv('TELEGRAM_BOT_TOKEN', '8788246277:AAHR3bz6IAIak23n_UYZdBWhpNeii8_4puE')
-        self.chat_id = os.getenv('TELEGRAM_CHAT_ID', '')
-        
-        self.scraper = DistrictIPLScraper()
-        self.notifier = TelegramNotifier(self.bot_token, self.chat_id)
-        
-        self.data_file = "data/tickets.json"
-        self.config_file = "data/user_config.json"
-        
-    def load_previous_data(self) -> Dict:
-        """Load previous data"""
-        try:
-            if os.path.exists(self.data_file):
-                with open(self.data_file, 'r') as f:
-                    return json.load(f)
-            return {'matches': []}
-        except Exception as e:
-            logger.error(f"Load error: {e}")
-            return {'matches': []}
-    
-    def load_user_preferences(self) -> Dict:
-        """Load preferences"""
-        try:
-            with open(self.config_file, 'r') as f:
-                return json.load(f)
-        except FileNotFoundError:
-            return {}
-    
-    def detect_changes(self, old_matches: List[Dict], new_matches: List[Dict]) -> Dict:
-        """Detect changes"""
-        changes = {
-            'status_changes': [],
-            'new_available': []
+        self.base_url = "https://www.district.in/events/ipl-ticket-booking"
+        self.headers = {
+            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36',
+            'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+            'Accept-Language': 'en-US,en;q=0.5',
+            'Connection': 'keep-alive',
         }
         
-        old_lookup = {f"{m['teams']}_{m['date']}": m for m in old_matches}
-        
-        for new_match in new_matches:
-            match_key = f"{new_match['teams']}_{new_match['date']}"
-            old_match = old_lookup.get(match_key)
-            
-            if old_match:
-                if old_match['status'] != new_match['status']:
-                    changes['status_changes'].append({
-                        'match': new_match,
-                        'old_status': old_match['status'],
-                        'new_status': new_match['status']
-                    })
-                    
-                    if new_match['status'] == 'AVAILABLE':
-                        changes['new_available'].append(new_match)
-            else:
-                if new_match['status'] == 'AVAILABLE':
-                    changes['new_available'].append(new_match)
-        
-        return changes
-    
-    def apply_user_filters(self, matches: List[Dict]) -> List[Dict]:
-        """Apply filters"""
+    def scrape_all_matches(self) -> List[Dict]:
+        """Scrape all matches"""
         try:
-            prefs = self.load_user_preferences()
-            team = prefs.get('team', 'any')
-            city = prefs.get('city', 'any')
-            return self.scraper.filter_matches(matches, team, city)
-        except Exception as e:
-            logger.error(f"Filter error: {e}")
+            logger.info(f"Scraping: {self.base_url}")
+            response = requests.get(self.base_url, headers=self.headers, timeout=15)
+            response.raise_for_status()
+            
+            soup = BeautifulSoup(response.content, 'html.parser')
+            matches = []
+            
+            match_cards = soup.find_all('div', class_=re.compile(r'card|event', re.I))
+            if not match_cards:
+                match_cards = soup.find_all(['div', 'article'], recursive=True)
+            
+            logger.info(f"Found {len(match_cards)} cards")
+            
+            for card in match_cards:
+                try:
+                    match_data = self._parse_match_card(card)
+                    if match_data and match_data.get('teams'):
+                        matches.append(match_data)
+                except:
+                    continue
+            
+            logger.info(f"Parsed {len(matches)} matches")
             return matches
-    
-    def run_check(self, send_alerts: bool = True):
-        """Run check"""
-        logger.info("=" * 60)
-        logger.info(f"Check started")
-        logger.info("=" * 60)
-        
-        previous_data = self.load_previous_data()
-        old_matches = previous_data.get('matches', [])
-        
-        logger.info("Scraping...")
-        all_matches = self.scraper.scrape_all_matches()
-        
-        if not all_matches:
-            logger.warning("No matches found")
-            return
-        
-        logger.info(f"Found {len(all_matches)} matches")
-        
-        filtered_matches = self.apply_user_filters(all_matches)
-        logger.info(f"Filtered: {len(filtered_matches)}")
-        
-        changes = self.detect_changes(old_matches, filtered_matches)
-        
-        if send_alerts and self.chat_id:
-            # First run: Summary
-            if not old_matches:
-                prefs = self.load_user_preferences()
-                ist = pytz.timezone('Asia/Kolkata')
-                now_ist = datetime.now(ist)
-                
-                summary = f"✅ <b>Monitoring Started!</b>\n\n"
-                summary += f"📊 Found {len(all_matches)} IPL matches\n\n"
-                summary += f"🎯 <b>Your Preferences:</b>\n"
-                summary += f"• Team: {prefs.get('team', 'Any')}\n"
-                summary += f"• City: {prefs.get('city', 'Any')}\n"
-                summary += f"• Max Price: ₹{prefs.get('max_price', 'Any')}\n\n"
-                summary += f"<b>Monitoring {len(filtered_matches)} match(es)</b>\n"
-                summary += f"🔔 You'll get alerts on status changes!\n\n"
-                summary += f"🕐 Started: {now_ist.strftime('%I:%M %p IST')}"
-                
-                self.notifier.send_message(summary)
             
-            # After first: Only changes
-            else:
-                ist = pytz.timezone('Asia/Kolkata')
-                for change in changes['status_changes']:
-                    self.notifier.send_status_change_alert(
-                        change['match'],
-                        change['old_status'],
-                        change['new_status']
-                    )
-                
-                for match in changes['new_available']:
-                    self.notifier.send_ticket_alert(match)
-        
-        self.scraper.save_results(all_matches, self.data_file)
-        logger.info(f"Complete: {len(changes['status_changes'])} changes")
-    
-    def send_heartbeat(self):
-        """Send heartbeat"""
-        try:
-            data = self.load_previous_data()
-            prefs = self.load_user_preferences()
-            
-            total = data.get('total_matches', 0)
-            team = prefs.get('team', 'any')
-            city = prefs.get('city', 'any')
-            monitored = len(self.scraper.filter_matches(data.get('matches', []), team, city))
-            
-            if self.chat_id:
-                self.notifier.send_heartbeat(total, monitored)
         except Exception as e:
-            logger.error(f"Heartbeat error: {e}")
-
-
-def main():
-    """Main"""
-    import sys
-    monitor = IPLTicketMonitor()
+            logger.error(f"Error: {e}")
+            return []
     
-    if len(sys.argv) > 1:
-        if sys.argv[1] == "heartbeat":
-            monitor.send_heartbeat()
-        elif sys.argv[1] == "check":
-            monitor.run_check(send_alerts=True)
-    else:
-        monitor.run_check(send_alerts=True)
-
-
-if __name__ == "__main__":
-    main()
+    def _parse_match_card(self, card) -> Optional[Dict]:
+        """Parse match card"""
+        try:
+            card_text = card.get_text(separator=' ', strip=True)
+            
+            team_patterns = [
+                'Chennai Super Kings', 'CSK',
+                'Mumbai Indians', 'MI',
+                'Royal Challengers Bangalore', 'RCB',
+                'Kolkata Knight Riders', 'KKR',
+                'Delhi Capitals', 'DC',
+                'Rajasthan Royals', 'RR',
+                'Punjab Kings', 'PBKS',
+                'Sunrisers Hyderabad', 'SRH',
+                'Gujarat Titans', 'GT',
+                'Lucknow Super Giants', 'LSG'
+            ]
+            
+            found_teams = []
+            for pattern in team_patterns:
+                if pattern in card_text and pattern not in found_teams:
+                    found_teams.append(pattern)
+                    if len(found_teams) == 2:
+                        break
+            
+            if len(found_teams) < 2:
+                return None
+            
+            teams = ' vs '.join(found_teams[:2])
+            
+            date_match = re.search(r'(Mon|Tue|Wed|Thu|Fri|Sat|Sun)\s+(\d{1,2})\s+(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)', card_text)
+            date = f"{date_match.group(1)} {date_match.group(2)} {date_match.group(3)}" if date_match else "Date TBD"
+            
+            time_match = re.search(r'(\d{1,2}):(\d{2})\s*(AM|PM)', card_text)
+            match_time = time_match.group(0) if time_match else "Time TBD"
+            
+            stadium_match = re.search(r'([\w\s]+Stadium)', card_text)
+            stadium = stadium_match.group(1).strip() if stadium_match else "Stadium TBD"
+            
+            status = self._detect_status(card)
+            
+            book_link = None
+            book_btn = card.find('a', href=True)
+            if book_btn:
+                book_link = book_btn['href']
+                if not book_link.startswith('http'):
+                    book_link = f"https://www.district.in{book_link}"
+            
+            return {
+                'teams': teams,
+                'date': date,
+                'stadium': stadium,
+                'time': match_time,
+                'status': status,
+                'booking_link': book_link,
+                'timestamp': datetime.now().isoformat(),
+                'source': 'district.in'
+            }
+        except:
+            return None
+    
+    def _detect_status(self, card) -> str:
+        """Detect status"""
+        card_text = card.get_text().lower()
+        
+        if 'sale is live' in card_text or 'book tickets' in card_text:
+            return 'AVAILABLE'
+        elif 'sale starts soon' in card_text or 'notify me' in card_text:
+            return 'COMING_SOON'
+        elif 'coming soon' in card_text:
+            return 'NOT_YET_ANNOUNCED'
+        elif 'sold out' in card_text:
+            return 'SOLD_OUT'
+        else:
+            return 'UNKNOWN'
+    
+    def filter_matches(self, matches: List[Dict], team: str = None, city: str = None) -> List[Dict]:
+        """Filter matches"""
+        filtered = matches
+        
+        if team and team.lower() != 'any':
+            filtered = [m for m in filtered if team.lower() in m['teams'].lower()]
+        
+        if city and city.lower() != 'any':
+            filtered = [m for m in filtered if city.lower() in m['stadium'].lower()]
+        
+        return filtered
+    
+    def save_results(self, matches: List[Dict], filepath: str = "data/tickets.json"):
+        """Save results"""
+        try:
+            with open(filepath, 'w') as f:
+                json.dump({
+                    'last_updated': datetime.now().isoformat(),
+                    'total_matches': len(matches),
+                    'matches': matches
+                }, f, indent=2)
+            return True
+        except Exception as e:
+            logger.error(f"Save error: {e}")
+            return False
