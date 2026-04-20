@@ -8,7 +8,6 @@ from datetime import datetime
 from typing import Dict, List
 import logging
 import pytz
-from scraper import DistrictIPLScraper
 from notifier import TelegramNotifier
 
 logging.basicConfig(level=logging.INFO)
