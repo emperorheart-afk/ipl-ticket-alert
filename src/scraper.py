@@ -59,8 +59,8 @@ class DistrictIPLScraper:
             return []
     
     def _parse_match_card(self, card) -> Optional[Dict]:
-    """Parse individual match card - FIXED VERSION"""
-    try:
+        """Parse individual match card - FIXED VERSION"""
+        try:
         card_text = card.get_text(separator=' ', strip=True)
         
         # Team detection
