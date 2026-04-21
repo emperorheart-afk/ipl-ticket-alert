@@ -254,6 +254,15 @@
                 let data;
                 if (response.ok) {
                     data = await response.json();
+                    
+                    // Filter for user preferences
+                    const filteredMatches = data.matches.filter(match => {
+                    const teamMatch = match.teams.toLowerCase().includes('kolkata');
+                    const cityMatch = match.stadium.toLowerCase().includes('kolkata');
+                    return teamMatch || cityMatch;
+                    });
+    
+                    data.matches = filteredMatches;
                 } else {
                     // Show message if file doesn't exist yet
                     data = {
