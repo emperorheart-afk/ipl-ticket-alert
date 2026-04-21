@@ -295,7 +295,8 @@
             document.getElementById('availableMatches').textContent = availableCount;
             
             const lastUpdate = new Date(data.last_updated);
-            document.getElementById('lastCheck').textContent = lastUpdate.toLocaleTimeString('en-IN', {timeZone: 'Asia/Kolkata'}) + ' IST';
+            const istTime = new Date(lastUpdate.getTime() + (5.5 * 60 * 60 * 1000));
+            document.getElementById('lastCheck').textContent = istTime.toLocaleTimeString('en-IN', {hour: '2-digit', minute: '2-digit'}) + ' IST';
             
             // Display matches
             const container = document.getElementById('matchesContainer');
