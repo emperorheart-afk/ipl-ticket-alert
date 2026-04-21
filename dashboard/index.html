@@ -295,7 +295,7 @@
             document.getElementById('availableMatches').textContent = availableCount;
             
             const lastUpdate = new Date(data.last_updated);
-            document.getElementById('lastCheck').textContent = lastUpdate.toLocaleTimeString();
+            document.getElementById('lastCheck').textContent = lastUpdate.toLocaleTimeString('en-IN', {timeZone: 'Asia/Kolkata'}) + ' IST';
             
             // Display matches
             const container = document.getElementById('matchesContainer');
