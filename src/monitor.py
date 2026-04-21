@@ -23,7 +23,7 @@ class IPLTicketMonitor:
         self.scraper = DistrictIPLScraper()
         self.notifier = TelegramNotifier(self.bot_token, self.chat_id)
         
-        self.data_file = "data/tickets.json"
+        self.data_file = "..data/tickets.json"
         self.config_file = "data/user_config.json"
         
     def load_previous_data(self) -> Dict:
