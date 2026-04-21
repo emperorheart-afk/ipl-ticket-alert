@@ -8,6 +8,7 @@ import json
 from datetime import datetime
 import time
 import re
+import os
 from typing import List, Dict, Optional
 import logging
 
@@ -145,19 +146,17 @@ class DistrictIPLScraper:
         return filtered
     
     def save_results(self, matches: List[Dict], filepath: str = "data/tickets.json"):
-    """Save results"""
-    try:
-        import os
-        os.makedirs(os.path.dirname(filepath), exist_ok=True)
-        
-        with open(filepath, 'w') as f:
-            json.dump({
-                'last_updated': datetime.now().isoformat(),
-                'total_matches': len(matches),
-                'matches': matches
-            }, f, indent=2)
-        return True
-    except Exception as e:
-        logger.error(f"Save error: {e}")
-        return False
-        
+        """Save results"""
+        try:
+            os.makedirs(os.path.dirname(filepath), exist_ok=True)
+            
+            with open(filepath, 'w') as f:
+                json.dump({
+                    'last_updated': datetime.now().isoformat(),
+                    'total_matches': len(matches),
+                    'matches': matches
+                }, f, indent=2)
+            return True
+        except Exception as e:
+            logger.error(f"Save error: {e}")
+            return False
