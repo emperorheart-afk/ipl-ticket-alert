@@ -247,54 +247,80 @@
     
     <script>
         async function loadData() {
+            try {
+                // Fetch real data from GitHub
+                const response = await fetch('https://raw.githubusercontent.com/emperorheart-afk/ipl-ticket-alert/main/data/tickets.json');
+                
+                let data;
+                if (response.ok) {
+                    data = await response.json();
+                } else {
+                    // Show message if file doesn't exist yet
+                    data = {
+                        last_updated: new Date().toISOString(),
+                        total_matches: 0,
+                        matches: [{
+                            teams: "Waiting for first check...",
+                            date: "Run workflow to start",
+                            time: "",
+                            stadium: "GitHub Actions will create data",
+                            status: "UNKNOWN",
+                            booking_link: null
+                        }]
+                    };
+                }
+                
+                displayData(data);
+            } catch (error) {
+                console.error('Error:', error);
+                document.getElementById('matchesContainer').innerHTML = 
+                    '<p style="text-align: center; color: #ef4444;">Error loading data. Run workflow first.</p>';
+            }
+        }
+        
+        function displayData(data) {
+            // Update stats
+            document.getElementById('totalMatches').textContent = data.total_matches || data.matches.length;
+            
+            const availableCount = data.matches.filter(m => m.status === 'AVAILABLE').length;
+            document.getElementById('availableMatches').textContent = availableCount;
+            
+            const lastUpdate = new Date(data.last_updated);
+            document.getElementById('lastCheck').textContent = lastUpdate.toLocaleTimeString();
+            
+            // Display matches
             const container = document.getElementById('matchesContainer');
-            
-            const sampleData = {
-                last_updated: new Date().toISOString(),
-                total_matches: 3,
-                matches: [
-                    {
-                        teams: "Chennai Super Kings vs Mumbai Indians",
-                        date: "Sat 02 May",
-                        time: "7:30 PM",
-                        stadium: "M.A. Chidambaram Stadium, Chennai",
-                        status: "COMING_SOON",
-                        booking_link: null
-                    },
-                    {
-                        teams: "Rajasthan Royals vs Delhi Capitals",
-                        date: "Fri 01 May",
-                        time: "7:30 PM",
-                        stadium: "Sawai Mansingh Stadium, Jaipur",
-                        status: "AVAILABLE",
-                        booking_link: "https://www.district.in/events/ipl-ticket-booking"
-                    }
-                ]
-            };
-            
-            document.getElementById('totalMatches').textContent = sampleData.total_matches;
-            document.getElementById('availableMatches').textContent = sampleData.matches.filter(m => m.status === 'AVAILABLE').length;
-            document.getElementById('lastCheck').textContent = new Date().toLocaleTimeString();
-            
             container.innerHTML = '';
-            sampleData.matches.forEach(match => {
-                const statusClass = match.status === 'AVAILABLE' ? 'status-available' : match.status === 'COMING_SOON' ? 'status-soon' : 'status-announced';
+            
+            if (data.matches.length === 0) {
+                container.innerHTML = '<p style="text-align: center; color: #94a3b8;">No matches found. Run workflow first.</p>';
+                return;
+            }
+            
+            data.matches.forEach(match => {
+                const statusClass = match.status === 'AVAILABLE' ? 'status-available' : 
+                                  match.status === 'COMING_SOON' ? 'status-soon' : 'status-announced';
+                
+                const statusText = match.status.replace(/_/g, ' ');
                 
                 container.innerHTML += `
                     <div class="match-card">
                         <div class="match-teams">${match.teams}</div>
                         <div class="match-details">
-                            📅 ${match.date} at ${match.time}<br>
+                            📅 ${match.date} ${match.time ? 'at ' + match.time : ''}<br>
                             🏟️ ${match.stadium}
                         </div>
-                        <span class="status-badge ${statusClass}">${match.status.replace('_', ' ')}</span>
+                        <span class="status-badge ${statusClass}">${statusText}</span>
                         ${match.booking_link ? `<br><a href="${match.booking_link}" target="_blank" class="book-btn">🎫 Book Tickets</a>` : ''}
                     </div>
                 `;
             });
         }
         
+        // Load data on page load
         loadData();
+        
+        // Auto-refresh every 2 minutes
         setInterval(loadData, 120000);
     </script>
 </body>
