@@ -1,11 +1,11 @@
 """
 Telegram Bot Notifier
-Sends alerts and heartbeat messages
 """
 
 import requests
 import json
 from datetime import datetime
+import pytz
 from typing import List, Dict
 import logging
 
@@ -19,13 +19,18 @@ class TelegramNotifier:
         self.chat_id = chat_id
         self.base_url = f"https://api.telegram.org/bot{bot_token}"
     
+    def _get_ist_time(self):
+        """Get current IST time"""
+        ist = pytz.timezone('Asia/Kolkata')
+        return datetime.now(ist)
+    
     def send_message(self, text: str, chat_id: str = None, parse_mode: str = "HTML") -> bool:
-        """Send a message to Telegram"""
+        """Send message"""
         try:
             target_chat_id = chat_id or self.chat_id
             
             if not target_chat_id:
-                logger.error("No chat_id provided")
+                logger.error("No chat_id")
                 return False
             
             url = f"{self.base_url}/sendMessage"
@@ -39,15 +44,15 @@ class TelegramNotifier:
             response = requests.post(url, json=payload, timeout=10)
             response.raise_for_status()
             
-            logger.info(f"Message sent to {target_chat_id}")
+            logger.info(f"Message sent")
             return True
             
         except Exception as e:
-            logger.error(f"Error sending message: {e}")
+            logger.error(f"Send error: {e}")
             return False
     
     def send_ticket_alert(self, match: Dict, chat_id: str = None) -> bool:
-        """Send ticket availability alert"""
+        """Send ticket alert"""
         status_emoji = {
             'AVAILABLE': '🚨',
             'COMING_SOON': '🔔',
@@ -69,19 +74,22 @@ class TelegramNotifier:
         if match['status'] == 'AVAILABLE' and match.get('booking_link'):
             message += f"\n<b>🎫 BOOK NOW:</b> {match['booking_link']}"
         
-        message += f"\n\n<i>🕐 Checked at: {datetime.now().strftime('%I:%M %p')}</i>"
+        ist_time = self._get_ist_time()
+        message += f"\n\n<i>🕐 Checked at: {ist_time.strftime('%I:%M %p IST')}</i>"
         
         return self.send_message(message, chat_id)
     
     def send_heartbeat(self, total_matches: int, active_monitors: int, chat_id: str = None) -> bool:
-        """Send hourly heartbeat message"""
+        """Send heartbeat"""
+        ist_time = self._get_ist_time()
+        
         message = f"""
 ✅ <b>Ticket Monitoring Active</b>
 
 <b>📊 Status:</b>
 - Monitoring {active_monitors} match(es)
 - Total matches found: {total_matches}
-- Last check: {datetime.now().strftime('%I:%M %p, %d %b')}
+- Last check: {ist_time.strftime('%I:%M %p IST, %d %b')}
 
 <b>⏱️ Next check:</b> Within 15 minutes
 
@@ -90,7 +98,9 @@ class TelegramNotifier:
         return self.send_message(message, chat_id)
     
     def send_status_change_alert(self, match: Dict, old_status: str, new_status: str, chat_id: str = None) -> bool:
-        """Alert when ticket status changes"""
+        """Alert on status change"""
+        ist_time = self._get_ist_time()
+        
         message = f"""
 🔔 <b>STATUS CHANGE DETECTED!</b>
 
@@ -105,12 +115,16 @@ class TelegramNotifier:
         if new_status == 'AVAILABLE':
             message += f"<b>🎫 BOOK NOW:</b> {match.get('booking_link', 'Check District.in')}"
         elif new_status == 'COMING_SOON':
-            message += "Sale will start soon! Keep this chat open for instant alerts."
+            message += "Sale will start soon! Keep alerts on."
+        
+        message += f"\n\n<i>🕐 Detected at: {ist_time.strftime('%I:%M %p IST')}</i>"
         
         return self.send_message(message, chat_id)
     
     def send_welcome_message(self, user_preferences: Dict, chat_id: str = None) -> bool:
-        """Send welcome message when monitoring starts"""
+        """Welcome message"""
+        ist_time = self._get_ist_time()
+        
         message = f"""
 🎉 <b>Welcome to IPL Ticket Alert!</b>
 
@@ -128,12 +142,14 @@ class TelegramNotifier:
         if user_preferences.get('max_price'):
             message += f"• Max Price: ₹{user_preferences['max_price']}\n"
         
-        message += """
+        message += f"""
 
 <b>⚡ What happens next:</b>
-- We check District.in every 15 minutes
-- You'll get instant alerts when tickets go live
-- Hourly heartbeat to confirm monitoring is active
+- We check every 15 minutes
+- Instant alerts when tickets go live
+- Hourly heartbeat confirming monitoring
+
+<b>🕐 Started at:</b> {ist_time.strftime('%I:%M %p IST')}
 
 <i>Sit back and relax - we've got you covered! 🏏</i>
 """
