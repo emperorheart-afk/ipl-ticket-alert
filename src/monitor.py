@@ -1,6 +1,5 @@
 """
 Main IPL Ticket Monitor
-Orchestrates scraping, change detection, and notifications
 """
 
 import os
@@ -8,6 +7,7 @@ import json
 from datetime import datetime
 from typing import Dict, List
 import logging
+import pytz
 from scraper import DistrictIPLScraper
 from notifier import TelegramNotifier
 
@@ -27,18 +27,18 @@ class IPLTicketMonitor:
         self.config_file = "data/user_config.json"
         
     def load_previous_data(self) -> Dict:
-        """Load previous scraping results"""
+        """Load previous data"""
         try:
             if os.path.exists(self.data_file):
                 with open(self.data_file, 'r') as f:
                     return json.load(f)
             return {'matches': []}
         except Exception as e:
-            logger.error(f"Error loading previous data: {e}")
+            logger.error(f"Load error: {e}")
             return {'matches': []}
     
     def load_user_preferences(self) -> Dict:
-        """Load user preferences from file"""
+        """Load preferences"""
         try:
             with open(self.config_file, 'r') as f:
                 return json.load(f)
@@ -46,7 +46,7 @@ class IPLTicketMonitor:
             return {}
     
     def detect_changes(self, old_matches: List[Dict], new_matches: List[Dict]) -> Dict:
-        """Detect status changes"""
+        """Detect changes"""
         changes = {
             'status_changes': [],
             'new_available': []
@@ -75,101 +75,110 @@ class IPLTicketMonitor:
         return changes
     
     def apply_user_filters(self, matches: List[Dict]) -> List[Dict]:
-        """Apply user preferences to filter matches"""
+        """Apply filters"""
         try:
             prefs = self.load_user_preferences()
-            
             team = prefs.get('team', 'any')
             city = prefs.get('city', 'any')
-            
-            filtered = self.scraper.filter_matches(matches, team, city)
-            
-            return filtered
-            
+            return self.scraper.filter_matches(matches, team, city)
         except Exception as e:
-            logger.error(f"Error applying filters: {e}")
+            logger.error(f"Filter error: {e}")
             return matches
     
     def run_check(self, send_alerts: bool = True):
-        """Run a single monitoring check"""
+        """Run check"""
         logger.info("=" * 60)
-        logger.info(f"Starting check at {datetime.now().strftime('%I:%M %p')}")
+        logger.info(f"Check started")
         logger.info("=" * 60)
         
         previous_data = self.load_previous_data()
         old_matches = previous_data.get('matches', [])
         
-        logger.info("Scraping District.in...")
+        logger.info("Scraping...")
         all_matches = self.scraper.scrape_all_matches()
         
         if not all_matches:
-            logger.warning("No matches found!")
+            logger.warning("No matches found")
             return
         
-        logger.info(f"Found {len(all_matches)} total matches")
+        logger.info(f"Found {len(all_matches)} matches")
         
         filtered_matches = self.apply_user_filters(all_matches)
-        logger.info(f"After filters: {len(filtered_matches)} matches")
+        logger.info(f"Filtered: {len(filtered_matches)}")
         
         changes = self.detect_changes(old_matches, filtered_matches)
         
         if send_alerts and self.chat_id:
-            for change in changes['status_changes']:
-                logger.info(f"Status change: {change['match']['teams']} - {change['old_status']} → {change['new_status']}")
-                self.notifier.send_status_change_alert(
-                    change['match'],
-                    change['old_status'],
-                    change['new_status']
-                )
+            # First run: Summary
+            if not old_matches:
+                prefs = self.load_user_preferences()
+                ist = pytz.timezone('Asia/Kolkata')
+                now_ist = datetime.now(ist)
+                
+                summary = f"✅ <b>Monitoring Started!</b>\n\n"
+                summary += f"📊 Found {len(all_matches)} IPL matches\n\n"
+                summary += f"🎯 <b>Your Preferences:</b>\n"
+                summary += f"• Team: {prefs.get('team', 'Any')}\n"
+                summary += f"• City: {prefs.get('city', 'Any')}\n"
+                summary += f"• Max Price: ₹{prefs.get('max_price', 'Any')}\n\n"
+                summary += f"<b>Monitoring {len(filtered_matches)} match(es)</b>\n"
+                summary += f"🔔 You'll get alerts on status changes!\n\n"
+                summary += f"🕐 Started: {now_ist.strftime('%I:%M %p IST')}"
+                
+                self.notifier.send_message(summary)
             
-            for match in changes['new_available']:
-                logger.info(f"🚨 TICKETS AVAILABLE: {match['teams']}")
-                self.notifier.send_ticket_alert(match)
+            # After first: Alert on changes
+            else:
+                for change in changes['status_changes']:
+                    self.notifier.send_status_change_alert(
+                        change['match'],
+                        change['old_status'],
+                        change['new_status']
+                    )
+                
+                for match in changes['new_available']:
+                    self.notifier.send_ticket_alert(match)
+                
+                # Also alert for new COMING_SOON matches
+                coming_soon = [m for m in filtered_matches if m['status'] == 'COMING_SOON']
+                for match in coming_soon:
+                    already_alerted = any(
+                        m['teams'] == match['teams'] and m.get('status') == 'COMING_SOON' 
+                        for m in old_matches
+                    )
+                    if not already_alerted:
+                        self.notifier.send_ticket_alert(match)
         
         self.scraper.save_results(all_matches, self.data_file)
-        
-        logger.info(f"\nCheck complete:")
-        logger.info(f"  • Total matches: {len(all_matches)}")
-        logger.info(f"  • Monitored matches: {len(filtered_matches)}")
-        logger.info(f"  • Status changes: {len(changes['status_changes'])}")
-        logger.info(f"  • New available: {len(changes['new_available'])}")
+        logger.info(f"Complete: {len(changes['status_changes'])} changes")
     
     def send_heartbeat(self):
-        """Send hourly heartbeat message"""
+        """Send heartbeat"""
         try:
             data = self.load_previous_data()
             prefs = self.load_user_preferences()
             
-            total_matches = data.get('total_matches', 0)
-            
+            total = data.get('total_matches', 0)
             team = prefs.get('team', 'any')
             city = prefs.get('city', 'any')
-            
             monitored = len(self.scraper.filter_matches(data.get('matches', []), team, city))
             
             if self.chat_id:
-                self.notifier.send_heartbeat(total_matches, monitored)
-                logger.info("Heartbeat sent")
-        
+                self.notifier.send_heartbeat(total, monitored)
         except Exception as e:
-            logger.error(f"Error sending heartbeat: {e}")
+            logger.error(f"Heartbeat error: {e}")
 
 
 def main():
-    """Main entry point"""
+    """Main"""
     import sys
-    
     monitor = IPLTicketMonitor()
     
     if len(sys.argv) > 1:
-        command = sys.argv[1]
-        
-        if command == "heartbeat":
+        if sys.argv[1] == "heartbeat":
             monitor.send_heartbeat()
-        elif command == "check":
+        elif sys.argv[1] == "check":
             monitor.run_check(send_alerts=True)
-        else:
-            print(f"Unknown command: {command}")
     else:
         monitor.run_check(send_alerts=True)
 
