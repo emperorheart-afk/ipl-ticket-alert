@@ -1,5 +1,1226 @@
 {
-  "last_updated": "2026-04-21T11:00:00Z",
-  "total_matches": 0,
-  "matches": []
+  "last_updated": "2026-04-21T05:41:41.514220",
+  "total_matches": 122,
+  "matches": [
+    {
+      "teams": "Chennai Super Kings vs CSK",
+      "date": "Tue 21 Apr",
+      "stadium": "Exclusive ticketing partner for Tickets on sale Tue 21 Apr Sunrisers Hyderabad vs Delhi Capitals Rajiv Gandhi International Cricket Stadium",
+      "time": "2:00 PM",
+      "status": "AVAILABLE",
+      "booking_link": "https://www.district.in/",
+      "timestamp": "2026-04-21T05:41:40.770085",
+      "source": "district.in"
+    },
+    {
+      "teams": "Chennai Super Kings vs CSK",
+      "date": "Tue 21 Apr",
+      "stadium": "Exclusive ticketing partner for Tickets on sale Tue 21 Apr Sunrisers Hyderabad vs Delhi Capitals Rajiv Gandhi International Cricket Stadium",
+      "time": "2:00 PM",
+      "status": "AVAILABLE",
+      "booking_link": "https://www.district.in/",
+      "timestamp": "2026-04-21T05:41:40.770669",
+      "source": "district.in"
+    },
+    {
+      "teams": "Chennai Super Kings vs CSK",
+      "date": "Tue 21 Apr",
+      "stadium": "Exclusive ticketing partner for Tickets on sale Tue 21 Apr Sunrisers Hyderabad vs Delhi Capitals Rajiv Gandhi International Cricket Stadium",
+      "time": "2:00 PM",
+      "status": "AVAILABLE",
+      "booking_link": null,
+      "timestamp": "2026-04-21T05:41:40.771803",
+      "source": "district.in"
+    },
+    {
+      "teams": "CSK vs DC",
+      "date": "Date TBD",
+      "stadium": "Stadium TBD",
+      "time": "Time TBD",
+      "status": "UNKNOWN",
+      "booking_link": null,
+      "timestamp": "2026-04-21T05:41:40.771895",
+      "source": "district.in"
+    },
+    {
+      "teams": "CSK vs DC",
+      "date": "Date TBD",
+      "stadium": "Stadium TBD",
+      "time": "Time TBD",
+      "status": "UNKNOWN",
+      "booking_link": null,
+      "timestamp": "2026-04-21T05:41:40.771977",
+      "source": "district.in"
+    },
+    {
+      "teams": "CSK vs DC",
+      "date": "Date TBD",
+      "stadium": "Stadium TBD",
+      "time": "Time TBD",
+      "status": "UNKNOWN",
+      "booking_link": null,
+      "timestamp": "2026-04-21T05:41:40.772036",
+      "source": "district.in"
+    },
+    {
+      "teams": "CSK vs DC",
+      "date": "Date TBD",
+      "stadium": "Stadium TBD",
+      "time": "Time TBD",
+      "status": "UNKNOWN",
+      "booking_link": null,
+      "timestamp": "2026-04-21T05:41:40.772085",
+      "source": "district.in"
+    },
+    {
+      "teams": "Chennai Super Kings vs Mumbai Indians",
+      "date": "Tue 21 Apr",
+      "stadium": "Tickets on sale Tue 21 Apr Sunrisers Hyderabad vs Delhi Capitals Rajiv Gandhi International Cricket Stadium",
+      "time": "2:00 PM",
+      "status": "AVAILABLE",
+      "booking_link": null,
+      "timestamp": "2026-04-21T05:41:40.773007",
+      "source": "district.in"
+    },
+    {
+      "teams": "Chennai Super Kings vs Kolkata Knight Riders",
+      "date": "Tue 21 Apr",
+      "stadium": "Tickets on sale Tue 21 Apr Sunrisers Hyderabad vs Delhi Capitals Rajiv Gandhi International Cricket Stadium",
+      "time": "2:00 PM",
+      "status": "AVAILABLE",
+      "booking_link": null,
+      "timestamp": "2026-04-21T05:41:40.773288",
+      "source": "district.in"
+    },
+    {
+      "teams": "Chennai Super Kings vs Kolkata Knight Riders",
+      "date": "Tue 21 Apr",
+      "stadium": "Tickets on sale Tue 21 Apr Sunrisers Hyderabad vs Delhi Capitals Rajiv Gandhi International Cricket Stadium",
+      "time": "2:00 PM",
+      "status": "AVAILABLE",
+      "booking_link": null,
+      "timestamp": "2026-04-21T05:41:40.773556",
+      "source": "district.in"
+    },
+    {
+      "teams": "Chennai Super Kings vs Kolkata Knight Riders",
+      "date": "Tue 21 Apr",
+      "stadium": "Tue 21 Apr Sunrisers Hyderabad vs Delhi Capitals Rajiv Gandhi International Cricket Stadium",
+      "time": "2:00 PM",
+      "status": "AVAILABLE",
+      "booking_link": null,
+      "timestamp": "2026-04-21T05:41:40.773859",
+      "source": "district.in"
+    },
+    {
+      "teams": "Delhi Capitals vs Sunrisers Hyderabad",
+      "date": "Tue 21 Apr",
+      "stadium": "Tue 21 Apr Sunrisers Hyderabad vs Delhi Capitals Rajiv Gandhi International Cricket Stadium",
+      "time": "2:00 PM",
+      "status": "AVAILABLE",
+      "booking_link": null,
+      "timestamp": "2026-04-21T05:41:40.773957",
+      "source": "district.in"
+    },
+    {
+      "teams": "Delhi Capitals vs Sunrisers Hyderabad",
+      "date": "Date TBD",
+      "stadium": "Sunrisers Hyderabad vs Delhi Capitals Rajiv Gandhi International Cricket Stadium",
+      "time": "2:00 PM",
+      "status": "AVAILABLE",
+      "booking_link": null,
+      "timestamp": "2026-04-21T05:41:40.774041",
+      "source": "district.in"
+    },
+    {
+      "teams": "Delhi Capitals vs Sunrisers Hyderabad",
+      "date": "Date TBD",
+      "stadium": "Stadium TBD",
+      "time": "Time TBD",
+      "status": "UNKNOWN",
+      "booking_link": null,
+      "timestamp": "2026-04-21T05:41:40.774076",
+      "source": "district.in"
+    },
+    {
+      "teams": "Delhi Capitals vs Sunrisers Hyderabad",
+      "date": "Date TBD",
+      "stadium": "Stadium TBD",
+      "time": "Time TBD",
+      "status": "UNKNOWN",
+      "booking_link": null,
+      "timestamp": "2026-04-21T05:41:40.774105",
+      "source": "district.in"
+    },
+    {
+      "teams": "Delhi Capitals vs Sunrisers Hyderabad",
+      "date": "Date TBD",
+      "stadium": "Stadium TBD",
+      "time": "Time TBD",
+      "status": "UNKNOWN",
+      "booking_link": null,
+      "timestamp": "2026-04-21T05:41:40.774132",
+      "source": "district.in"
+    },
+    {
+      "teams": "Delhi Capitals vs Punjab Kings",
+      "date": "Sat 25 Apr",
+      "stadium": "Sat 25 Apr Delhi Capitals vs Punjab Kings Arun Jaitley Stadium",
+      "time": "10:00 AM",
+      "status": "AVAILABLE",
+      "booking_link": null,
+      "timestamp": "2026-04-21T05:41:40.774230",
+      "source": "district.in"
+    },
+    {
+      "teams": "Delhi Capitals vs Punjab Kings",
+      "date": "Date TBD",
+      "stadium": "Delhi Capitals vs Punjab Kings Arun Jaitley Stadium",
+      "time": "10:00 AM",
+      "status": "AVAILABLE",
+      "booking_link": null,
+      "timestamp": "2026-04-21T05:41:40.774297",
+      "source": "district.in"
+    },
+    {
+      "teams": "Delhi Capitals vs Punjab Kings",
+      "date": "Date TBD",
+      "stadium": "Stadium TBD",
+      "time": "Time TBD",
+      "status": "UNKNOWN",
+      "booking_link": null,
+      "timestamp": "2026-04-21T05:41:40.774328",
+      "source": "district.in"
+    },
+    {
+      "teams": "Delhi Capitals vs Punjab Kings",
+      "date": "Date TBD",
+      "stadium": "Stadium TBD",
+      "time": "Time TBD",
+      "status": "UNKNOWN",
+      "booking_link": null,
+      "timestamp": "2026-04-21T05:41:40.774354",
+      "source": "district.in"
+    },
+    {
+      "teams": "Delhi Capitals vs Punjab Kings",
+      "date": "Date TBD",
+      "stadium": "Stadium TBD",
+      "time": "Time TBD",
+      "status": "UNKNOWN",
+      "booking_link": null,
+      "timestamp": "2026-04-21T05:41:40.774378",
+      "source": "district.in"
+    },
+    {
+      "teams": "Rajasthan Royals vs Sunrisers Hyderabad",
+      "date": "Sat 25 Apr",
+      "stadium": "Sat 25 Apr Rajasthan Royals vs Sunrisers Hyderabad Sawai Mansingh Stadium",
+      "time": "2:00 PM",
+      "status": "AVAILABLE",
+      "booking_link": null,
+      "timestamp": "2026-04-21T05:41:40.774472",
+      "source": "district.in"
+    },
+    {
+      "teams": "Rajasthan Royals vs Sunrisers Hyderabad",
+      "date": "Date TBD",
+      "stadium": "Rajasthan Royals vs Sunrisers Hyderabad Sawai Mansingh Stadium",
+      "time": "2:00 PM",
+      "status": "AVAILABLE",
+      "booking_link": null,
+      "timestamp": "2026-04-21T05:41:40.774537",
+      "source": "district.in"
+    },
+    {
+      "teams": "Rajasthan Royals vs Sunrisers Hyderabad",
+      "date": "Date TBD",
+      "stadium": "Stadium TBD",
+      "time": "Time TBD",
+      "status": "UNKNOWN",
+      "booking_link": null,
+      "timestamp": "2026-04-21T05:41:40.774571",
+      "source": "district.in"
+    },
+    {
+      "teams": "Rajasthan Royals vs Sunrisers Hyderabad",
+      "date": "Date TBD",
+      "stadium": "Stadium TBD",
+      "time": "Time TBD",
+      "status": "UNKNOWN",
+      "booking_link": null,
+      "timestamp": "2026-04-21T05:41:40.774601",
+      "source": "district.in"
+    },
+    {
+      "teams": "Rajasthan Royals vs Sunrisers Hyderabad",
+      "date": "Date TBD",
+      "stadium": "Stadium TBD",
+      "time": "Time TBD",
+      "status": "UNKNOWN",
+      "booking_link": null,
+      "timestamp": "2026-04-21T05:41:40.774629",
+      "source": "district.in"
+    },
+    {
+      "teams": "Delhi Capitals vs Rajasthan Royals",
+      "date": "Fri 01 May",
+      "stadium": "Fri 01 May Rajasthan Royals vs Delhi Capitals Sawai Mansingh Stadium",
+      "time": "2:00 PM",
+      "status": "AVAILABLE",
+      "booking_link": null,
+      "timestamp": "2026-04-21T05:41:40.774722",
+      "source": "district.in"
+    },
+    {
+      "teams": "Delhi Capitals vs Rajasthan Royals",
+      "date": "Date TBD",
+      "stadium": "Rajasthan Royals vs Delhi Capitals Sawai Mansingh Stadium",
+      "time": "2:00 PM",
+      "status": "AVAILABLE",
+      "booking_link": null,
+      "timestamp": "2026-04-21T05:41:40.774805",
+      "source": "district.in"
+    },
+    {
+      "teams": "Delhi Capitals vs Rajasthan Royals",
+      "date": "Date TBD",
+      "stadium": "Stadium TBD",
+      "time": "Time TBD",
+      "status": "UNKNOWN",
+      "booking_link": null,
+      "timestamp": "2026-04-21T05:41:40.774839",
+      "source": "district.in"
+    },
+    {
+      "teams": "Delhi Capitals vs Rajasthan Royals",
+      "date": "Date TBD",
+      "stadium": "Stadium TBD",
+      "time": "Time TBD",
+      "status": "UNKNOWN",
+      "booking_link": null,
+      "timestamp": "2026-04-21T05:41:40.774865",
+      "source": "district.in"
+    },
+    {
+      "teams": "Delhi Capitals vs Rajasthan Royals",
+      "date": "Date TBD",
+      "stadium": "Stadium TBD",
+      "time": "Time TBD",
+      "status": "UNKNOWN",
+      "booking_link": null,
+      "timestamp": "2026-04-21T05:41:40.774891",
+      "source": "district.in"
+    },
+    {
+      "teams": "Chennai Super Kings vs Delhi Capitals",
+      "date": "Tue 05 May",
+      "stadium": "Tue 05 May Delhi Capitals vs Chennai Super Kings Arun Jaitley Stadium",
+      "time": "2:00 PM",
+      "status": "AVAILABLE",
+      "booking_link": null,
+      "timestamp": "2026-04-21T05:41:40.774984",
+      "source": "district.in"
+    },
+    {
+      "teams": "Chennai Super Kings vs Delhi Capitals",
+      "date": "Date TBD",
+      "stadium": "Delhi Capitals vs Chennai Super Kings Arun Jaitley Stadium",
+      "time": "2:00 PM",
+      "status": "AVAILABLE",
+      "booking_link": null,
+      "timestamp": "2026-04-21T05:41:40.775047",
+      "source": "district.in"
+    },
+    {
+      "teams": "Chennai Super Kings vs Delhi Capitals",
+      "date": "Date TBD",
+      "stadium": "Stadium TBD",
+      "time": "Time TBD",
+      "status": "UNKNOWN",
+      "booking_link": null,
+      "timestamp": "2026-04-21T05:41:40.775080",
+      "source": "district.in"
+    },
+    {
+      "teams": "Chennai Super Kings vs Delhi Capitals",
+      "date": "Date TBD",
+      "stadium": "Stadium TBD",
+      "time": "Time TBD",
+      "status": "UNKNOWN",
+      "booking_link": null,
+      "timestamp": "2026-04-21T05:41:40.775108",
+      "source": "district.in"
+    },
+    {
+      "teams": "Chennai Super Kings vs Delhi Capitals",
+      "date": "Date TBD",
+      "stadium": "Stadium TBD",
+      "time": "Time TBD",
+      "status": "UNKNOWN",
+      "booking_link": null,
+      "timestamp": "2026-04-21T05:41:40.775135",
+      "source": "district.in"
+    },
+    {
+      "teams": "Kolkata Knight Riders vs Delhi Capitals",
+      "date": "Fri 08 May",
+      "stadium": "Fri 08 May Delhi Capitals vs Kolkata Knight Riders Arun Jaitley Stadium",
+      "time": "2:00 PM",
+      "status": "AVAILABLE",
+      "booking_link": null,
+      "timestamp": "2026-04-21T05:41:40.775229",
+      "source": "district.in"
+    },
+    {
+      "teams": "Kolkata Knight Riders vs Delhi Capitals",
+      "date": "Date TBD",
+      "stadium": "Delhi Capitals vs Kolkata Knight Riders Arun Jaitley Stadium",
+      "time": "2:00 PM",
+      "status": "AVAILABLE",
+      "booking_link": null,
+      "timestamp": "2026-04-21T05:41:40.775292",
+      "source": "district.in"
+    },
+    {
+      "teams": "Kolkata Knight Riders vs Delhi Capitals",
+      "date": "Date TBD",
+      "stadium": "Stadium TBD",
+      "time": "Time TBD",
+      "status": "UNKNOWN",
+      "booking_link": null,
+      "timestamp": "2026-04-21T05:41:40.775326",
+      "source": "district.in"
+    },
+    {
+      "teams": "Kolkata Knight Riders vs Delhi Capitals",
+      "date": "Date TBD",
+      "stadium": "Stadium TBD",
+      "time": "Time TBD",
+      "status": "UNKNOWN",
+      "booking_link": null,
+      "timestamp": "2026-04-21T05:41:40.775354",
+      "source": "district.in"
+    },
+    {
+      "teams": "Kolkata Knight Riders vs Delhi Capitals",
+      "date": "Date TBD",
+      "stadium": "Stadium TBD",
+      "time": "Time TBD",
+      "status": "UNKNOWN",
+      "booking_link": null,
+      "timestamp": "2026-04-21T05:41:40.775381",
+      "source": "district.in"
+    },
+    {
+      "teams": "Chennai Super Kings vs Royal Challengers Bangalore",
+      "date": "Sun 26 Apr",
+      "stadium": "Chidambaram Stadium",
+      "time": "10:00 AM",
+      "status": "COMING_SOON",
+      "booking_link": null,
+      "timestamp": "2026-04-21T05:41:40.775644",
+      "source": "district.in"
+    },
+    {
+      "teams": "Chennai Super Kings vs Royal Challengers Bangalore",
+      "date": "Sun 26 Apr",
+      "stadium": "Chidambaram Stadium",
+      "time": "10:00 AM",
+      "status": "COMING_SOON",
+      "booking_link": null,
+      "timestamp": "2026-04-21T05:41:40.775885",
+      "source": "district.in"
+    },
+    {
+      "teams": "Chennai Super Kings vs Royal Challengers Bangalore",
+      "date": "Sun 26 Apr",
+      "stadium": "Chidambaram Stadium",
+      "time": "10:00 AM",
+      "status": "COMING_SOON",
+      "booking_link": null,
+      "timestamp": "2026-04-21T05:41:40.776099",
+      "source": "district.in"
+    },
+    {
+      "teams": "Chennai Super Kings vs Gujarat Titans",
+      "date": "Sun 26 Apr",
+      "stadium": "Chidambaram Stadium",
+      "time": "10:00 AM",
+      "status": "COMING_SOON",
+      "booking_link": null,
+      "timestamp": "2026-04-21T05:41:40.776180",
+      "source": "district.in"
+    },
+    {
+      "teams": "Chennai Super Kings vs Gujarat Titans",
+      "date": "Date TBD",
+      "stadium": "Chidambaram Stadium",
+      "time": "10:00 AM",
+      "status": "COMING_SOON",
+      "booking_link": null,
+      "timestamp": "2026-04-21T05:41:40.776262",
+      "source": "district.in"
+    },
+    {
+      "teams": "Chennai Super Kings vs Gujarat Titans",
+      "date": "Date TBD",
+      "stadium": "Stadium TBD",
+      "time": "Time TBD",
+      "status": "UNKNOWN",
+      "booking_link": null,
+      "timestamp": "2026-04-21T05:41:40.776295",
+      "source": "district.in"
+    },
+    {
+      "teams": "Chennai Super Kings vs Gujarat Titans",
+      "date": "Date TBD",
+      "stadium": "Stadium TBD",
+      "time": "Time TBD",
+      "status": "UNKNOWN",
+      "booking_link": null,
+      "timestamp": "2026-04-21T05:41:40.776324",
+      "source": "district.in"
+    },
+    {
+      "teams": "Chennai Super Kings vs Gujarat Titans",
+      "date": "Date TBD",
+      "stadium": "Stadium TBD",
+      "time": "Time TBD",
+      "status": "UNKNOWN",
+      "booking_link": null,
+      "timestamp": "2026-04-21T05:41:40.776350",
+      "source": "district.in"
+    },
+    {
+      "teams": "Royal Challengers Bangalore vs Delhi Capitals",
+      "date": "Mon 27 Apr",
+      "stadium": "Mon 27 Apr Delhi Capitals vs Royal Challengers Bangalore Arun Jaitley Stadium",
+      "time": "2:00 PM",
+      "status": "COMING_SOON",
+      "booking_link": null,
+      "timestamp": "2026-04-21T05:41:40.776448",
+      "source": "district.in"
+    },
+    {
+      "teams": "Royal Challengers Bangalore vs Delhi Capitals",
+      "date": "Date TBD",
+      "stadium": "Delhi Capitals vs Royal Challengers Bangalore Arun Jaitley Stadium",
+      "time": "2:00 PM",
+      "status": "COMING_SOON",
+      "booking_link": null,
+      "timestamp": "2026-04-21T05:41:40.776509",
+      "source": "district.in"
+    },
+    {
+      "teams": "Royal Challengers Bangalore vs Delhi Capitals",
+      "date": "Date TBD",
+      "stadium": "Stadium TBD",
+      "time": "Time TBD",
+      "status": "UNKNOWN",
+      "booking_link": null,
+      "timestamp": "2026-04-21T05:41:40.776545",
+      "source": "district.in"
+    },
+    {
+      "teams": "Royal Challengers Bangalore vs Delhi Capitals",
+      "date": "Date TBD",
+      "stadium": "Stadium TBD",
+      "time": "Time TBD",
+      "status": "UNKNOWN",
+      "booking_link": null,
+      "timestamp": "2026-04-21T05:41:40.776576",
+      "source": "district.in"
+    },
+    {
+      "teams": "Royal Challengers Bangalore vs Delhi Capitals",
+      "date": "Date TBD",
+      "stadium": "Stadium TBD",
+      "time": "Time TBD",
+      "status": "UNKNOWN",
+      "booking_link": null,
+      "timestamp": "2026-04-21T05:41:40.776605",
+      "source": "district.in"
+    },
+    {
+      "teams": "Rajasthan Royals vs Punjab Kings",
+      "date": "Tue 28 Apr",
+      "stadium": "Stadium TBD",
+      "time": "2:00 PM",
+      "status": "COMING_SOON",
+      "booking_link": null,
+      "timestamp": "2026-04-21T05:41:40.776720",
+      "source": "district.in"
+    },
+    {
+      "teams": "Rajasthan Royals vs Punjab Kings",
+      "date": "Date TBD",
+      "stadium": "Stadium TBD",
+      "time": "2:00 PM",
+      "status": "COMING_SOON",
+      "booking_link": null,
+      "timestamp": "2026-04-21T05:41:40.776823",
+      "source": "district.in"
+    },
+    {
+      "teams": "Rajasthan Royals vs Punjab Kings",
+      "date": "Date TBD",
+      "stadium": "Stadium TBD",
+      "time": "Time TBD",
+      "status": "UNKNOWN",
+      "booking_link": null,
+      "timestamp": "2026-04-21T05:41:40.776856",
+      "source": "district.in"
+    },
+    {
+      "teams": "Rajasthan Royals vs Punjab Kings",
+      "date": "Date TBD",
+      "stadium": "Stadium TBD",
+      "time": "Time TBD",
+      "status": "UNKNOWN",
+      "booking_link": null,
+      "timestamp": "2026-04-21T05:41:40.776883",
+      "source": "district.in"
+    },
+    {
+      "teams": "Rajasthan Royals vs Punjab Kings",
+      "date": "Date TBD",
+      "stadium": "Stadium TBD",
+      "time": "Time TBD",
+      "status": "UNKNOWN",
+      "booking_link": null,
+      "timestamp": "2026-04-21T05:41:40.776908",
+      "source": "district.in"
+    },
+    {
+      "teams": "Rajasthan Royals vs Gujarat Titans",
+      "date": "Sat 09 May",
+      "stadium": "Sat 09 May Rajasthan Royals vs Gujarat Titans Sawai Mansingh Stadium",
+      "time": "2:00 PM",
+      "status": "COMING_SOON",
+      "booking_link": null,
+      "timestamp": "2026-04-21T05:41:40.776994",
+      "source": "district.in"
+    },
+    {
+      "teams": "Rajasthan Royals vs Gujarat Titans",
+      "date": "Date TBD",
+      "stadium": "Rajasthan Royals vs Gujarat Titans Sawai Mansingh Stadium",
+      "time": "2:00 PM",
+      "status": "COMING_SOON",
+      "booking_link": null,
+      "timestamp": "2026-04-21T05:41:40.777056",
+      "source": "district.in"
+    },
+    {
+      "teams": "Rajasthan Royals vs Gujarat Titans",
+      "date": "Date TBD",
+      "stadium": "Stadium TBD",
+      "time": "Time TBD",
+      "status": "UNKNOWN",
+      "booking_link": null,
+      "timestamp": "2026-04-21T05:41:40.777089",
+      "source": "district.in"
+    },
+    {
+      "teams": "Rajasthan Royals vs Gujarat Titans",
+      "date": "Date TBD",
+      "stadium": "Stadium TBD",
+      "time": "Time TBD",
+      "status": "UNKNOWN",
+      "booking_link": null,
+      "timestamp": "2026-04-21T05:41:40.777116",
+      "source": "district.in"
+    },
+    {
+      "teams": "Rajasthan Royals vs Gujarat Titans",
+      "date": "Date TBD",
+      "stadium": "Stadium TBD",
+      "time": "Time TBD",
+      "status": "UNKNOWN",
+      "booking_link": null,
+      "timestamp": "2026-04-21T05:41:40.777142",
+      "source": "district.in"
+    },
+    {
+      "teams": "Rajasthan Royals vs Lucknow Super Giants",
+      "date": "Tue 19 May",
+      "stadium": "Tue 19 May Rajasthan Royals vs Lucknow Super Giants Sawai Mansingh Stadium",
+      "time": "2:00 PM",
+      "status": "COMING_SOON",
+      "booking_link": null,
+      "timestamp": "2026-04-21T05:41:40.777225",
+      "source": "district.in"
+    },
+    {
+      "teams": "Rajasthan Royals vs Lucknow Super Giants",
+      "date": "Date TBD",
+      "stadium": "Rajasthan Royals vs Lucknow Super Giants Sawai Mansingh Stadium",
+      "time": "2:00 PM",
+      "status": "COMING_SOON",
+      "booking_link": null,
+      "timestamp": "2026-04-21T05:41:40.777285",
+      "source": "district.in"
+    },
+    {
+      "teams": "Rajasthan Royals vs Lucknow Super Giants",
+      "date": "Date TBD",
+      "stadium": "Stadium TBD",
+      "time": "Time TBD",
+      "status": "UNKNOWN",
+      "booking_link": null,
+      "timestamp": "2026-04-21T05:41:40.777320",
+      "source": "district.in"
+    },
+    {
+      "teams": "Rajasthan Royals vs Lucknow Super Giants",
+      "date": "Date TBD",
+      "stadium": "Stadium TBD",
+      "time": "Time TBD",
+      "status": "UNKNOWN",
+      "booking_link": null,
+      "timestamp": "2026-04-21T05:41:40.777349",
+      "source": "district.in"
+    },
+    {
+      "teams": "Rajasthan Royals vs Lucknow Super Giants",
+      "date": "Date TBD",
+      "stadium": "Stadium TBD",
+      "time": "Time TBD",
+      "status": "UNKNOWN",
+      "booking_link": null,
+      "timestamp": "2026-04-21T05:41:40.777378",
+      "source": "district.in"
+    },
+    {
+      "teams": "Chennai Super Kings vs Mumbai Indians",
+      "date": "Sat 02 May",
+      "stadium": "Chidambaram Stadium",
+      "time": "2:00 PM",
+      "status": "NOT_YET_ANNOUNCED",
+      "booking_link": null,
+      "timestamp": "2026-04-21T05:41:40.777813",
+      "source": "district.in"
+    },
+    {
+      "teams": "Chennai Super Kings vs Mumbai Indians",
+      "date": "Sat 02 May",
+      "stadium": "Chidambaram Stadium",
+      "time": "2:00 PM",
+      "status": "NOT_YET_ANNOUNCED",
+      "booking_link": null,
+      "timestamp": "2026-04-21T05:41:40.778194",
+      "source": "district.in"
+    },
+    {
+      "teams": "Chennai Super Kings vs Mumbai Indians",
+      "date": "Sat 02 May",
+      "stadium": "Chidambaram Stadium",
+      "time": "2:00 PM",
+      "status": "NOT_YET_ANNOUNCED",
+      "booking_link": null,
+      "timestamp": "2026-04-21T05:41:40.778551",
+      "source": "district.in"
+    },
+    {
+      "teams": "Chennai Super Kings vs Mumbai Indians",
+      "date": "Sat 02 May",
+      "stadium": "Chidambaram Stadium",
+      "time": "2:00 PM",
+      "status": "NOT_YET_ANNOUNCED",
+      "booking_link": null,
+      "timestamp": "2026-04-21T05:41:40.778625",
+      "source": "district.in"
+    },
+    {
+      "teams": "Chennai Super Kings vs Mumbai Indians",
+      "date": "Date TBD",
+      "stadium": "Chidambaram Stadium",
+      "time": "2:00 PM",
+      "status": "NOT_YET_ANNOUNCED",
+      "booking_link": null,
+      "timestamp": "2026-04-21T05:41:40.778698",
+      "source": "district.in"
+    },
+    {
+      "teams": "Chennai Super Kings vs Mumbai Indians",
+      "date": "Date TBD",
+      "stadium": "Stadium TBD",
+      "time": "Time TBD",
+      "status": "UNKNOWN",
+      "booking_link": null,
+      "timestamp": "2026-04-21T05:41:40.778731",
+      "source": "district.in"
+    },
+    {
+      "teams": "Chennai Super Kings vs Mumbai Indians",
+      "date": "Date TBD",
+      "stadium": "Stadium TBD",
+      "time": "Time TBD",
+      "status": "UNKNOWN",
+      "booking_link": null,
+      "timestamp": "2026-04-21T05:41:40.778778",
+      "source": "district.in"
+    },
+    {
+      "teams": "Chennai Super Kings vs Mumbai Indians",
+      "date": "Date TBD",
+      "stadium": "Stadium TBD",
+      "time": "Time TBD",
+      "status": "UNKNOWN",
+      "booking_link": null,
+      "timestamp": "2026-04-21T05:41:40.778811",
+      "source": "district.in"
+    },
+    {
+      "teams": "Kolkata Knight Riders vs Sunrisers Hyderabad",
+      "date": "Sun 03 May",
+      "stadium": "Sun 03 May Sunrisers Hyderabad vs Kolkata Knight Riders Rajiv Gandhi International Cricket Stadium",
+      "time": "10:00 AM",
+      "status": "NOT_YET_ANNOUNCED",
+      "booking_link": null,
+      "timestamp": "2026-04-21T05:41:40.778897",
+      "source": "district.in"
+    },
+    {
+      "teams": "Kolkata Knight Riders vs Sunrisers Hyderabad",
+      "date": "Date TBD",
+      "stadium": "Sunrisers Hyderabad vs Kolkata Knight Riders Rajiv Gandhi International Cricket Stadium",
+      "time": "10:00 AM",
+      "status": "NOT_YET_ANNOUNCED",
+      "booking_link": null,
+      "timestamp": "2026-04-21T05:41:40.778959",
+      "source": "district.in"
+    },
+    {
+      "teams": "Kolkata Knight Riders vs Sunrisers Hyderabad",
+      "date": "Date TBD",
+      "stadium": "Stadium TBD",
+      "time": "Time TBD",
+      "status": "UNKNOWN",
+      "booking_link": null,
+      "timestamp": "2026-04-21T05:41:40.778995",
+      "source": "district.in"
+    },
+    {
+      "teams": "Kolkata Knight Riders vs Sunrisers Hyderabad",
+      "date": "Date TBD",
+      "stadium": "Stadium TBD",
+      "time": "Time TBD",
+      "status": "UNKNOWN",
+      "booking_link": null,
+      "timestamp": "2026-04-21T05:41:40.779026",
+      "source": "district.in"
+    },
+    {
+      "teams": "Kolkata Knight Riders vs Sunrisers Hyderabad",
+      "date": "Date TBD",
+      "stadium": "Stadium TBD",
+      "time": "Time TBD",
+      "status": "UNKNOWN",
+      "booking_link": null,
+      "timestamp": "2026-04-21T05:41:40.779055",
+      "source": "district.in"
+    },
+    {
+      "teams": "Punjab Kings vs Sunrisers Hyderabad",
+      "date": "Wed 06 May",
+      "stadium": "Wed 06 May Sunrisers Hyderabad vs Punjab Kings Rajiv Gandhi International Cricket Stadium",
+      "time": "2:00 PM",
+      "status": "NOT_YET_ANNOUNCED",
+      "booking_link": null,
+      "timestamp": "2026-04-21T05:41:40.779138",
+      "source": "district.in"
+    },
+    {
+      "teams": "Punjab Kings vs Sunrisers Hyderabad",
+      "date": "Date TBD",
+      "stadium": "Sunrisers Hyderabad vs Punjab Kings Rajiv Gandhi International Cricket Stadium",
+      "time": "2:00 PM",
+      "status": "NOT_YET_ANNOUNCED",
+      "booking_link": null,
+      "timestamp": "2026-04-21T05:41:40.779199",
+      "source": "district.in"
+    },
+    {
+      "teams": "Punjab Kings vs Sunrisers Hyderabad",
+      "date": "Date TBD",
+      "stadium": "Stadium TBD",
+      "time": "Time TBD",
+      "status": "UNKNOWN",
+      "booking_link": null,
+      "timestamp": "2026-04-21T05:41:40.779232",
+      "source": "district.in"
+    },
+    {
+      "teams": "Punjab Kings vs Sunrisers Hyderabad",
+      "date": "Date TBD",
+      "stadium": "Stadium TBD",
+      "time": "Time TBD",
+      "status": "UNKNOWN",
+      "booking_link": null,
+      "timestamp": "2026-04-21T05:41:40.779259",
+      "source": "district.in"
+    },
+    {
+      "teams": "Punjab Kings vs Sunrisers Hyderabad",
+      "date": "Date TBD",
+      "stadium": "Stadium TBD",
+      "time": "Time TBD",
+      "status": "UNKNOWN",
+      "booking_link": null,
+      "timestamp": "2026-04-21T05:41:40.779285",
+      "source": "district.in"
+    },
+    {
+      "teams": "Chennai Super Kings vs Lucknow Super Giants",
+      "date": "Sun 10 May",
+      "stadium": "Chidambaram Stadium",
+      "time": "10:00 AM",
+      "status": "NOT_YET_ANNOUNCED",
+      "booking_link": null,
+      "timestamp": "2026-04-21T05:41:40.779383",
+      "source": "district.in"
+    },
+    {
+      "teams": "Chennai Super Kings vs Lucknow Super Giants",
+      "date": "Date TBD",
+      "stadium": "Chidambaram Stadium",
+      "time": "10:00 AM",
+      "status": "NOT_YET_ANNOUNCED",
+      "booking_link": null,
+      "timestamp": "2026-04-21T05:41:40.779454",
+      "source": "district.in"
+    },
+    {
+      "teams": "Chennai Super Kings vs Lucknow Super Giants",
+      "date": "Date TBD",
+      "stadium": "Stadium TBD",
+      "time": "Time TBD",
+      "status": "UNKNOWN",
+      "booking_link": null,
+      "timestamp": "2026-04-21T05:41:40.779490",
+      "source": "district.in"
+    },
+    {
+      "teams": "Chennai Super Kings vs Lucknow Super Giants",
+      "date": "Date TBD",
+      "stadium": "Stadium TBD",
+      "time": "Time TBD",
+      "status": "UNKNOWN",
+      "booking_link": null,
+      "timestamp": "2026-04-21T05:41:40.779521",
+      "source": "district.in"
+    },
+    {
+      "teams": "Chennai Super Kings vs Lucknow Super Giants",
+      "date": "Date TBD",
+      "stadium": "Stadium TBD",
+      "time": "Time TBD",
+      "status": "UNKNOWN",
+      "booking_link": null,
+      "timestamp": "2026-04-21T05:41:40.779551",
+      "source": "district.in"
+    },
+    {
+      "teams": "Delhi Capitals vs Punjab Kings",
+      "date": "Mon 11 May",
+      "stadium": "Mon 11 May Punjab Kings vs Delhi Capitals Himachal Pradesh Cricket Association Stadium",
+      "time": "2:00 PM",
+      "status": "NOT_YET_ANNOUNCED",
+      "booking_link": null,
+      "timestamp": "2026-04-21T05:41:40.779632",
+      "source": "district.in"
+    },
+    {
+      "teams": "Delhi Capitals vs Punjab Kings",
+      "date": "Date TBD",
+      "stadium": "Punjab Kings vs Delhi Capitals Himachal Pradesh Cricket Association Stadium",
+      "time": "2:00 PM",
+      "status": "NOT_YET_ANNOUNCED",
+      "booking_link": null,
+      "timestamp": "2026-04-21T05:41:40.779693",
+      "source": "district.in"
+    },
+    {
+      "teams": "Delhi Capitals vs Punjab Kings",
+      "date": "Date TBD",
+      "stadium": "Stadium TBD",
+      "time": "Time TBD",
+      "status": "UNKNOWN",
+      "booking_link": null,
+      "timestamp": "2026-04-21T05:41:40.779724",
+      "source": "district.in"
+    },
+    {
+      "teams": "Delhi Capitals vs Punjab Kings",
+      "date": "Date TBD",
+      "stadium": "Stadium TBD",
+      "time": "Time TBD",
+      "status": "UNKNOWN",
+      "booking_link": null,
+      "timestamp": "2026-04-21T05:41:40.779749",
+      "source": "district.in"
+    },
+    {
+      "teams": "Delhi Capitals vs Punjab Kings",
+      "date": "Date TBD",
+      "stadium": "Stadium TBD",
+      "time": "Time TBD",
+      "status": "UNKNOWN",
+      "booking_link": null,
+      "timestamp": "2026-04-21T05:41:40.779791",
+      "source": "district.in"
+    },
+    {
+      "teams": "Mumbai Indians vs Punjab Kings",
+      "date": "Thu 14 May",
+      "stadium": "Thu 14 May Punjab Kings vs Mumbai Indians Himachal Pradesh Cricket Association Stadium",
+      "time": "2:00 PM",
+      "status": "NOT_YET_ANNOUNCED",
+      "booking_link": null,
+      "timestamp": "2026-04-21T05:41:40.779874",
+      "source": "district.in"
+    },
+    {
+      "teams": "Mumbai Indians vs Punjab Kings",
+      "date": "Date TBD",
+      "stadium": "Punjab Kings vs Mumbai Indians Himachal Pradesh Cricket Association Stadium",
+      "time": "2:00 PM",
+      "status": "NOT_YET_ANNOUNCED",
+      "booking_link": null,
+      "timestamp": "2026-04-21T05:41:40.779935",
+      "source": "district.in"
+    },
+    {
+      "teams": "Mumbai Indians vs Punjab Kings",
+      "date": "Date TBD",
+      "stadium": "Stadium TBD",
+      "time": "Time TBD",
+      "status": "UNKNOWN",
+      "booking_link": null,
+      "timestamp": "2026-04-21T05:41:40.779966",
+      "source": "district.in"
+    },
+    {
+      "teams": "Mumbai Indians vs Punjab Kings",
+      "date": "Date TBD",
+      "stadium": "Stadium TBD",
+      "time": "Time TBD",
+      "status": "UNKNOWN",
+      "booking_link": null,
+      "timestamp": "2026-04-21T05:41:40.779992",
+      "source": "district.in"
+    },
+    {
+      "teams": "Mumbai Indians vs Punjab Kings",
+      "date": "Date TBD",
+      "stadium": "Stadium TBD",
+      "time": "Time TBD",
+      "status": "UNKNOWN",
+      "booking_link": null,
+      "timestamp": "2026-04-21T05:41:40.780016",
+      "source": "district.in"
+    },
+    {
+      "teams": "Royal Challengers Bangalore vs Punjab Kings",
+      "date": "Sun 17 May",
+      "stadium": "Sun 17 May Punjab Kings vs Royal Challengers Bangalore Himachal Pradesh Cricket Association Stadium",
+      "time": "10:00 AM",
+      "status": "NOT_YET_ANNOUNCED",
+      "booking_link": null,
+      "timestamp": "2026-04-21T05:41:40.780099",
+      "source": "district.in"
+    },
+    {
+      "teams": "Royal Challengers Bangalore vs Punjab Kings",
+      "date": "Date TBD",
+      "stadium": "Punjab Kings vs Royal Challengers Bangalore Himachal Pradesh Cricket Association Stadium",
+      "time": "10:00 AM",
+      "status": "NOT_YET_ANNOUNCED",
+      "booking_link": null,
+      "timestamp": "2026-04-21T05:41:40.780161",
+      "source": "district.in"
+    },
+    {
+      "teams": "Royal Challengers Bangalore vs Punjab Kings",
+      "date": "Date TBD",
+      "stadium": "Stadium TBD",
+      "time": "Time TBD",
+      "status": "UNKNOWN",
+      "booking_link": null,
+      "timestamp": "2026-04-21T05:41:40.780197",
+      "source": "district.in"
+    },
+    {
+      "teams": "Royal Challengers Bangalore vs Punjab Kings",
+      "date": "Date TBD",
+      "stadium": "Stadium TBD",
+      "time": "Time TBD",
+      "status": "UNKNOWN",
+      "booking_link": null,
+      "timestamp": "2026-04-21T05:41:40.780227",
+      "source": "district.in"
+    },
+    {
+      "teams": "Royal Challengers Bangalore vs Punjab Kings",
+      "date": "Date TBD",
+      "stadium": "Stadium TBD",
+      "time": "Time TBD",
+      "status": "UNKNOWN",
+      "booking_link": null,
+      "timestamp": "2026-04-21T05:41:40.780256",
+      "source": "district.in"
+    },
+    {
+      "teams": "Delhi Capitals vs Rajasthan Royals",
+      "date": "Sun 17 May",
+      "stadium": "Sun 17 May Delhi Capitals vs Rajasthan Royals Arun Jaitley Stadium",
+      "time": "2:00 PM",
+      "status": "NOT_YET_ANNOUNCED",
+      "booking_link": null,
+      "timestamp": "2026-04-21T05:41:40.780336",
+      "source": "district.in"
+    },
+    {
+      "teams": "Delhi Capitals vs Rajasthan Royals",
+      "date": "Date TBD",
+      "stadium": "Delhi Capitals vs Rajasthan Royals Arun Jaitley Stadium",
+      "time": "2:00 PM",
+      "status": "NOT_YET_ANNOUNCED",
+      "booking_link": null,
+      "timestamp": "2026-04-21T05:41:40.780394",
+      "source": "district.in"
+    },
+    {
+      "teams": "Delhi Capitals vs Rajasthan Royals",
+      "date": "Date TBD",
+      "stadium": "Stadium TBD",
+      "time": "Time TBD",
+      "status": "UNKNOWN",
+      "booking_link": null,
+      "timestamp": "2026-04-21T05:41:40.780426",
+      "source": "district.in"
+    },
+    {
+      "teams": "Delhi Capitals vs Rajasthan Royals",
+      "date": "Date TBD",
+      "stadium": "Stadium TBD",
+      "time": "Time TBD",
+      "status": "UNKNOWN",
+      "booking_link": null,
+      "timestamp": "2026-04-21T05:41:40.780453",
+      "source": "district.in"
+    },
+    {
+      "teams": "Delhi Capitals vs Rajasthan Royals",
+      "date": "Date TBD",
+      "stadium": "Stadium TBD",
+      "time": "Time TBD",
+      "status": "UNKNOWN",
+      "booking_link": null,
+      "timestamp": "2026-04-21T05:41:40.780478",
+      "source": "district.in"
+    },
+    {
+      "teams": "Chennai Super Kings vs Sunrisers Hyderabad",
+      "date": "Mon 18 May",
+      "stadium": "Chidambaram Stadium",
+      "time": "2:00 PM",
+      "status": "NOT_YET_ANNOUNCED",
+      "booking_link": null,
+      "timestamp": "2026-04-21T05:41:40.780575",
+      "source": "district.in"
+    },
+    {
+      "teams": "Chennai Super Kings vs Sunrisers Hyderabad",
+      "date": "Date TBD",
+      "stadium": "Chidambaram Stadium",
+      "time": "2:00 PM",
+      "status": "NOT_YET_ANNOUNCED",
+      "booking_link": null,
+      "timestamp": "2026-04-21T05:41:40.780647",
+      "source": "district.in"
+    },
+    {
+      "teams": "Chennai Super Kings vs Sunrisers Hyderabad",
+      "date": "Date TBD",
+      "stadium": "Stadium TBD",
+      "time": "Time TBD",
+      "status": "UNKNOWN",
+      "booking_link": null,
+      "timestamp": "2026-04-21T05:41:40.780683",
+      "source": "district.in"
+    },
+    {
+      "teams": "Chennai Super Kings vs Sunrisers Hyderabad",
+      "date": "Date TBD",
+      "stadium": "Stadium TBD",
+      "time": "Time TBD",
+      "status": "UNKNOWN",
+      "booking_link": null,
+      "timestamp": "2026-04-21T05:41:40.780714",
+      "source": "district.in"
+    },
+    {
+      "teams": "Chennai Super Kings vs Sunrisers Hyderabad",
+      "date": "Date TBD",
+      "stadium": "Stadium TBD",
+      "time": "Time TBD",
+      "status": "UNKNOWN",
+      "booking_link": null,
+      "timestamp": "2026-04-21T05:41:40.780742",
+      "source": "district.in"
+    },
+    {
+      "teams": "Royal Challengers Bangalore vs Sunrisers Hyderabad",
+      "date": "Fri 22 May",
+      "stadium": "Fri 22 May Sunrisers Hyderabad vs Royal Challengers Bangalore Rajiv Gandhi International Cricket Stadium",
+      "time": "2:00 PM",
+      "status": "NOT_YET_ANNOUNCED",
+      "booking_link": null,
+      "timestamp": "2026-04-21T05:41:40.780847",
+      "source": "district.in"
+    },
+    {
+      "teams": "Royal Challengers Bangalore vs Sunrisers Hyderabad",
+      "date": "Date TBD",
+      "stadium": "Sunrisers Hyderabad vs Royal Challengers Bangalore Rajiv Gandhi International Cricket Stadium",
+      "time": "2:00 PM",
+      "status": "NOT_YET_ANNOUNCED",
+      "booking_link": null,
+      "timestamp": "2026-04-21T05:41:40.780910",
+      "source": "district.in"
+    },
+    {
+      "teams": "Royal Challengers Bangalore vs Sunrisers Hyderabad",
+      "date": "Date TBD",
+      "stadium": "Stadium TBD",
+      "time": "Time TBD",
+      "status": "UNKNOWN",
+      "booking_link": null,
+      "timestamp": "2026-04-21T05:41:40.780950",
+      "source": "district.in"
+    },
+    {
+      "teams": "Royal Challengers Bangalore vs Sunrisers Hyderabad",
+      "date": "Date TBD",
+      "stadium": "Stadium TBD",
+      "time": "Time TBD",
+      "status": "UNKNOWN",
+      "booking_link": null,
+      "timestamp": "2026-04-21T05:41:40.780983",
+      "source": "district.in"
+    },
+    {
+      "teams": "Royal Challengers Bangalore vs Sunrisers Hyderabad",
+      "date": "Date TBD",
+      "stadium": "Stadium TBD",
+      "time": "Time TBD",
+      "status": "UNKNOWN",
+      "booking_link": null,
+      "timestamp": "2026-04-21T05:41:40.781016",
+      "source": "district.in"
+    }
+  ]
 }
