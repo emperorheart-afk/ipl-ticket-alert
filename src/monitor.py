@@ -149,7 +149,9 @@ class IPLTicketMonitor:
                     if not already_alerted:
                         self.notifier.send_ticket_alert(match)
         
-        self.scraper.save_results(all_matches, self.data_file)
+        logger.info(f"Attempting to save {len(all_matches)} matches to {self.data_file}")
+        result = self.scraper.save_results(all_matches, self.data_file)
+        logger.info(f"Save result: {result}")
         logger.info(f"Complete: {len(changes['status_changes'])} changes")
     
     def send_heartbeat(self):
